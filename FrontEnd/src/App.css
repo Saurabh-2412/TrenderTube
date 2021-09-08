@@ -1,0 +1,393 @@
+@import url("https://ui-component-lib.netlify.app/style.css");
+@import 'react-toastify/dist/ReactToastify.min.css'; 
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.card--body {
+  position: relative;
+}
+
+.playlist-section {
+  max-width: 100%;
+  margin-left: 5rem;
+  margin-top: 3rem;
+}
+
+.playlist-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.playlist-container {
+  margin-top: 2rem;
+}
+
+.playlist-section .card--horizontal .card--title {
+  font-size: 2rem;
+}
+
+.playlist-container:nth-child(even) {
+  margin-left: 2rem;
+}
+
+.playlist-card {
+  margin-left: 5rem;
+  margin-top: 3rem;
+}
+
+.card--horizontal {
+  max-width: 100%;
+  width: 50rem;
+}
+
+.playlist-delete .card--dismiss {
+  color: #000;
+}
+
+.playlist-card-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modal--title{
+  font-weight: bold;
+  border-bottom: 1px solid gray;
+  padding: 0.5rem;
+  margin:0px
+}
+
+.modal--content{
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid gray;
+}
+
+.modal--icon{
+  position: absolute;
+  right: 12px;
+  top: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 786px) {
+  .playlist-section {
+    margin: 0;
+  }
+
+  .playlist-container {
+    width: 100%;
+  }
+  .playlist-container:nth-child(even) {
+    margin-left: 0;
+  }
+
+  .playlist-section .card--horizontal {
+    width: 100%;
+  }
+  .playlist-section .card--horizontal .btn {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .playlist-section .page-heading {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.modal--input {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.moda-hide{
+  display: none;
+}
+
+.modal-show{
+  display: block;
+}
+
+.modal--input-box {
+  font-size: 1rem;
+  padding: 0.6rem;
+  width: 55%;
+  float: left;
+  border: none;
+  border-bottom: 2px solid gray;
+}
+
+.modal--input button {
+  margin-left: 1.5rem;
+}
+
+.playlist-names {
+  margin-left: 1rem;
+}
+
+input[type="checkbox"] {
+  width: 1.5rem; /*Desired width*/
+  height: 1.5rem; /*Desired height*/
+}
+.playlist-names label {
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+.modal--window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 25rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--default);
+  width: 40rem;
+}
+
+.modal-show {
+  display: block;
+}
+
+.modal-hide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .modal--window {
+    max-width: 90%;
+  }
+}
+
+.navigation {
+  background-color: var(--alert-secondary-font-color);
+  color: var(--nav-color);
+  padding: 0.50rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.nav-bttn {
+  margin: 0px 15px;
+  padding: 5px;
+  background-color: gray;
+  color: white;
+}
+
+.WatchLater .Like {
+  float: "right";
+  background-color: "gray";
+  padding: "5px";
+  border: "2px solid black";
+}
+
+.card--dismiss {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1rem;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.card button{
+  background-color:#41464b;
+  color:orange;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+div.scrollmenu {
+  background-color: #41464b;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu li {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 12px;
+  border: 5px solid orange;
+  /* margin: 15px; */
+}
+
+div.scrollmenu li:hover {
+  background-color: #777;
+}
+
+div.scrollmenu li h3 {
+  font-size: 1rem;
+  margin: 0px;
+  color: orange;
+}
+
+.videoListingUL {
+  padding: 0px;
+  background-color: #41464b;
+  color: orange;
+  margin: 0px;
+}
+
+.videoListingUL li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0px;
+  border: 4px solid orange;
+  margin: 5px;
+}
+
+.videoListingUL li h3 {
+  font-size: 1rem;
+  margin: 0px;
+  float: "left";
+}
+
+.videoListingUL li button {
+  float: right;
+  background-color:#41464b;
+  color:orange;
+  padding: 5px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 0px 6px 6px 0px;
+}
+
+.videoPlayer {
+  margin: 0px;
+  width: 99.25%;
+  height: 35em;
+  border: 5px solid gray;
+}
+
+.PlayList{
+  border:2px solid #41464b;
+  border-left: 0;
+  border-right: 0;
+  margin: 10px 0px;
+  /* border-radius: 5px; */
+}
+
+
+.PlayList h1{
+  color: #41464b;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.PlayList .PlayList-header{
+  border-radius:3px;
+  font-weight:bold;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  margin-right: 15px;
+  padding: 0 5px;
+}
+
+.PlayList .PlayList-header button{
+  background-color:#41464b;
+  color: orange;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .videoPlayer {
+    height: 20em;
+    width: auto;
+  }
+}
+
+.videoPlayerText {
+  background: #41464b;
+  margin: 0px;
+  color: orange;
+}
+
+.videoPlayerText h2 {
+  margin: 0px 5rem;
+  padding: 5px;
+}
+
+.videoPlayerText h4 {
+  margin: 0px 5rem;
+  padding: 5px;
+}
+
+.videoPlayerText button {
+  background: #41464b;
+  margin: 0px 5px 8px 14px;
+  color: orange;
+  font-size: larger;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
